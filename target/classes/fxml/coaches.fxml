@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.footballfixture.CoachesController"
+      spacing="10">
+    <padding>
+        <Insets top="10" right="10" bottom="10" left="10"/>
+    </padding>
+    <HBox spacing="10">
+        <TextField fx:id="nameField" promptText="Coach Name"/>
+        <TextField fx:id="experienceYearsField" promptText="Experience Years"/>
+        <TextField fx:id="nationalityField" promptText="Nationality"/>
+        <ComboBox fx:id="teamComboBox" promptText="Select Club"/>
+        <Button text="Add" onAction="#addCoach"/>
+    </HBox>
+    <TableView fx:id="coachesTable" VBox.vgrow="ALWAYS">
+        <columns>
+            <TableColumn fx:id="idColumn" text="ID"/>
+            <TableColumn fx:id="nameColumn" text="Name"/>
+            <TableColumn fx:id="experienceYearsColumn" text="Experience Years"/>
+            <TableColumn fx:id="nationalityColumn" text="Nationality"/>
+            <TableColumn fx:id="teamColumn" text="Club"/>
+        </columns>
+    </TableView>
+    <HBox spacing="10">
+        <Button text="Update" onAction="#updateCoach"/>
+        <Button text="Delete" onAction="#deleteCoach"/>
+    </HBox>
+</VBox>

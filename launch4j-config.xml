@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<launch4jConfig>
+  <dontWrapJar>false</dontWrapJar>
+  <headerType>gui</headerType>
+  <jar>target/football-fixture-management-1.0-SNAPSHOT.jar</jar>
+  <outfile>FootballFixtureManagement.exe</outfile>
+  <errTitle>Football Fixture Management</errTitle>
+  <cmdLine>--module-path "lib" --add-modules javafx.controls,javafx.fxml,javafx.graphics --add-opens javafx.graphics/javafx.scene=ALL-UNNAMED --add-opens javafx.controls/javafx.scene.control.skin=ALL-UNNAMED</cmdLine>
+  <chdir>.</chdir>
+  <priority>normal</priority>
+  <downloadUrl>https://www.oracle.com/java/technologies/javase/jdk17-archive-downloads.html</downloadUrl>
+  <supportUrl></supportUrl>
+  <stayAlive>false</stayAlive>
+  <restartOnCrash>false</restartOnCrash>
+  <manifest></manifest>
+  <jre>
+    <path>%JAVA_HOME%</path>
+    <requiresJdk>false</requiresJdk>
+    <requires64Bit>false</requires64Bit>
+    <minVersion>17</minVersion>
+    <maxVersion></maxVersion>
+    <initialHeapSize>128</initialHeapSize>
+    <maxHeapSize>512</maxHeapSize>
+    <opt>--module-path "lib" --add-modules javafx.controls,javafx.fxml,javafx.graphics --add-opens javafx.graphics/javafx.scene=ALL-UNNAMED --add-opens javafx.controls/javafx.scene.control.skin=ALL-UNNAMED</opt>
+  </jre>
+  <versionInfo>
+    <fileVersion>1.0.0.0</fileVersion>
+    <txtFileVersion>1.0.0.0</txtFileVersion>
+    <fileDescription>Football Fixture Management System</fileDescription>
+    <copyright>Your Copyright</copyright>
+    <productVersion>1.0.0.0</productVersion>
+    <txtProductVersion>1.0.0.0</txtProductVersion>
+    <productName>Football Fixture Management</productName>
+    <companyName></companyName>
+    <internalName>FootballFixture</internalName>
+    <originalFilename>FootballFixtureManagement.exe</originalFilename>
+  </versionInfo>
+  <messages>
+    <startupErr>An error occurred while starting the application.</startupErr>
+    <jreNotFoundErr>This application requires Java Runtime Environment 17 or higher.
+Please download and install from:
+https://www.oracle.com/java/technologies/javase/jdk17-archive-downloads.html</jreNotFoundErr>
+    <jreVersionErr>This application requires Java Runtime Environment 17 or higher.</jreVersionErr>
+    <launcherErr>The registry refers to a nonexistent Java Runtime Environment installation or the runtime is corrupted.</launcherErr>
+  </messages>
+</launch4jConfig>

@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+<?import javafx.geometry.Insets?>
+<?import org.kordamp.ikonli.javafx.*?>
+
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.footballfixture.MainController"
+      prefHeight="600.0" prefWidth="800.0"
+      stylesheets="@../css/dark-theme.css"
+      style="-fx-background-color: rgba(0, 0, 0, 0.5);">
+    <MenuBar>
+        <Menu text="File">
+            <MenuItem text="Database Connection" onAction="#showDatabaseConnectionDialog"/>
+            <MenuItem text="Clear Database" onAction="#clearDatabase"/>
+            <SeparatorMenuItem />
+            <MenuItem text="Exit" onAction="#exitApplication"/>
+        </Menu>
+        <Menu text="Help">
+            <MenuItem text="About" onAction="#showAboutDialog"/>
+        </Menu>
+    </MenuBar>
+    <SplitPane VBox.vgrow="ALWAYS" dividerPositions="0.2">
+        <VBox spacing="10" styleClass="sidebar">
+            <Label text="Football Fixture" style="-fx-font-size: 18px; -fx-font-weight: bold;"/>
+            <Button text="Club" onAction="#showTeamsView" maxWidth="Infinity">
+                <graphic>
+                    <FontIcon iconLiteral="fas-users" iconSize="16"/>
+                </graphic>
+            </Button>
+            <Button text="Players" onAction="#showPlayersView" maxWidth="Infinity">
+                <graphic>
+                    <FontIcon iconLiteral="fas-running" iconSize="16"/>
+                </graphic>
+            </Button>
+            <Button text="Coaches" onAction="#showCoachesView" maxWidth="Infinity">
+                <graphic>
+                    <FontIcon iconLiteral="fas-chalkboard-teacher" iconSize="16"/>
+                </graphic>
+            </Button>
+            <Button text="Stadiums" onAction="#showStadiumsView" maxWidth="Infinity">
+                <graphic>
+                    <FontIcon iconLiteral="fas-building" iconSize="16"/>
+                </graphic>
+            </Button>
+            <Button text="Matches" onAction="#showMatchesView" maxWidth="Infinity">
+                <graphic>
+                    <FontIcon iconLiteral="fas-futbol" iconSize="16"/>
+                </graphic>
+            </Button>
+            <Button text="Fixtures" onAction="#showFixturesView" maxWidth="Infinity">
+                <graphic>
+                    <FontIcon iconLiteral="fas-calendar" iconSize="16"/>
+                </graphic>
+            </Button>
+            <!-- Tambahkan tombol League -->
+            <Button text="League" onAction="#showLeagueView" maxWidth="Infinity">
+                <graphic>
+                    <FontIcon iconLiteral="fas-trophy" iconSize="16"/>
+                </graphic>
+            </Button>
+            <Button text="Results" onAction="#showResultsView" maxWidth="Infinity">
+                <graphic>
+                    <FontIcon iconLiteral="fas-trophy" iconSize="16"/>
+                </graphic>
+            </Button>
+            <Region VBox.vgrow="ALWAYS" />
+            <Button text="Exit" onAction="#exitApplication" maxWidth="Infinity">
+                <graphic>
+                    <FontIcon iconLiteral="fas-sign-out-alt" iconSize="16"/>
+                </graphic>
+            </Button>
+        </VBox>
+        <StackPane fx:id="contentArea">
+            <!-- Content will be loaded here dynamically -->
+        </StackPane>
+    </SplitPane>
+</VBox>

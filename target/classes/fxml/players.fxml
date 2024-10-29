@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.footballfixture.PlayersController"
+      spacing="10">
+    <padding>
+        <Insets top="10" right="10" bottom="10" left="10"/>
+    </padding>
+    <HBox spacing="10">
+        <TextField fx:id="nameField" promptText="Player Name"/>
+        <TextField fx:id="ageField" promptText="Age"/>
+        <TextField fx:id="positionField" promptText="Position"/>
+        <TextField fx:id="squadNoField" promptText="Squad No"/>
+        <TextField fx:id="goalScoreField" promptText="Goal Score"/>
+        <TextField fx:id="yellowCardField" promptText="Yellow Card"/>
+        <TextField fx:id="redCardField" promptText="Red Card"/>
+        <ComboBox fx:id="teamComboBox" promptText="Select Club"/>
+        <Button text="Add" onAction="#addPlayer"/>
+    </HBox>
+    <TableView fx:id="playersTable" VBox.vgrow="ALWAYS">
+        <columns>
+            <TableColumn fx:id="idColumn" text="ID"/>
+            <TableColumn fx:id="nameColumn" text="Name"/>
+            <TableColumn fx:id="ageColumn" text="Age"/>
+            <TableColumn fx:id="positionColumn" text="Position"/>
+            <TableColumn fx:id="squadNoColumn" text="Squad No"/>
+            <TableColumn fx:id="goalScoreColumn" text="Goal Score"/>
+            <TableColumn fx:id="yellowCardColumn" text="Yellow Card"/>
+            <TableColumn fx:id="redCardColumn" text="Red Card"/>
+            <TableColumn fx:id="teamColumn" text="Club"/>
+        </columns>
+    </TableView>
+    <HBox spacing="10">
+        <Button text="Update" onAction="#updatePlayer"/>
+        <Button text="Delete" onAction="#deletePlayer"/>
+    </HBox>
+</VBox>

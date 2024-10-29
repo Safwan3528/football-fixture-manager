@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.footballfixture.LeagueController"
+      spacing="10"
+      styleClass="league-container">
+    <padding>
+        <Insets top="10" right="10" bottom="10" left="10"/>
+    </padding>
+
+    <!-- League Input Section -->
+    <GridPane hgap="10" vgap="10">
+        <TextField fx:id="nameField" promptText="League Name" 
+                  GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+        <TextField fx:id="countryField" promptText="Country" 
+                  GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+        <TextField fx:id="seasonField" promptText="Season" 
+                  GridPane.columnIndex="2" GridPane.rowIndex="0"/>
+        <DatePicker fx:id="startDatePicker" promptText="Start Date" 
+                   GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+        <DatePicker fx:id="endDatePicker" promptText="End Date" 
+                   GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+        <Button text="Add League" onAction="#addLeague" 
+                GridPane.columnIndex="2" GridPane.rowIndex="1"/>
+    </GridPane>
+
+    <!-- League Table -->
+    <TableView fx:id="leagueTable" VBox.vgrow="ALWAYS">
+        <columns>
+            <TableColumn fx:id="idColumn" text="ID"/>
+            <TableColumn fx:id="nameColumn" text="League Name"/>
+            <TableColumn fx:id="countryColumn" text="Country"/>
+            <TableColumn fx:id="seasonColumn" text="Season"/>
+            <TableColumn fx:id="startDateColumn" text="Start Date"/>
+            <TableColumn fx:id="endDateColumn" text="End Date"/>
+        </columns>
+    </TableView>
+
+    <!-- Teams and Matches Section -->
+    <TabPane>
+        <Tab text="Teams">
+            <VBox spacing="10">
+                <HBox spacing="10">
+                    <ComboBox fx:id="teamComboBox" promptText="Select Team"/>
+                    <Button text="Add Team to League" onAction="#addTeamToLeague"/>
+                </HBox>
+                <TableView fx:id="leagueTeamsTable">
+                    <columns>
+                        <TableColumn fx:id="teamNameColumn" text="Team Name"/>
+                        <TableColumn fx:id="teamCountryColumn" text="Country"/>
+                    </columns>
+                </TableView>
+            </VBox>
+        </Tab>
+        <Tab text="Matches">
+            <VBox spacing="10">
+                <HBox spacing="10">
+                    <ComboBox fx:id="matchComboBox" promptText="Select Match"/>
+                    <Button text="Add Match to League" onAction="#addMatchToLeague"/>
+                </HBox>
+                <TableView fx:id="leagueMatchesTable">
+                    <columns>
+                        <TableColumn fx:id="matchDetailsColumn" text="Match Details"/>
+                        <TableColumn fx:id="matchDateColumn" text="Date"/>
+                    </columns>
+                </TableView>
+            </VBox>
+        </Tab>
+    </TabPane>
+</VBox>

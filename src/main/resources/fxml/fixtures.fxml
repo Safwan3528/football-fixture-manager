@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.collections.FXCollections?>
+<?import java.lang.String?>
+
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.footballfixture.FixturesController"
+      spacing="10"
+      styleClass="fixtures-container">
+    <padding>
+        <Insets top="10" right="10" bottom="10" left="10"/>
+    </padding>
+    
+    <HBox spacing="10" alignment="CENTER">
+        <ComboBox fx:id="matchComboBox" promptText="Select Match" maxWidth="300"/>
+        <DatePicker fx:id="datePicker" promptText="Schedule Date"/>
+        <TextField fx:id="timeField" promptText="Schedule Time (HH:mm)"/>
+        <ComboBox fx:id="statusComboBox" promptText="Status">
+            <items>
+                <FXCollections fx:factory="observableArrayList">
+                    <String fx:value="Scheduled"/>
+                    <String fx:value="Completed"/>
+                    <String fx:value="Postponed"/>
+                </FXCollections>
+            </items>
+        </ComboBox>
+        <Button text="Add" onAction="#addFixture"/>
+    </HBox>
+    
+    <TableView fx:id="fixturesTable" VBox.vgrow="ALWAYS">
+        <columns>
+            <TableColumn fx:id="idColumn" text="ID"/>
+            <TableColumn fx:id="matchDetailsColumn" text="Match Details" minWidth="200"/>
+            <TableColumn fx:id="dateColumn" text="Schedule Date"/>
+            <TableColumn fx:id="timeColumn" text="Schedule Time"/>
+            <TableColumn fx:id="statusColumn" text="Status"/>
+        </columns>
+    </TableView>
+    
+    <HBox spacing="10" alignment="CENTER">
+        <Button text="Update" onAction="#updateFixture"/>
+        <Button text="Delete" onAction="#deleteFixture"/>
+    </HBox>
+</VBox>

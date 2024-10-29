@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.text.Font?>
+
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.footballfixture.ExportController"
+      spacing="20"
+      styleClass="export-container">
+    <padding>
+        <Insets top="20" right="20" bottom="20" left="20"/>
+    </padding>
+
+    <!-- Header -->
+    <Label text="Export Data" styleClass="header-label">
+        <font>
+            <Font name="System Bold" size="24"/>
+        </font>
+    </Label>
+
+    <!-- Export Options -->
+    <VBox spacing="15" styleClass="export-section">
+        <Label text="Select Data to Export:" styleClass="section-label">
+            <font>
+                <Font name="System Bold" size="14"/>
+            </font>
+        </Label>
+        
+        <CheckBox fx:id="teamsCheckBox" text="Clubs" selected="true"/>
+        <CheckBox fx:id="playersCheckBox" text="Players" selected="true"/>
+        <CheckBox fx:id="coachesCheckBox" text="Coaches" selected="true"/>
+        <CheckBox fx:id="stadiumsCheckBox" text="Stadiums" selected="true"/>
+        <CheckBox fx:id="matchesCheckBox" text="Matches" selected="true"/>
+        <CheckBox fx:id="resultsCheckBox" text="Results" selected="true"/>
+    </VBox>
+
+    <!-- Export Format -->
+    <VBox spacing="15" styleClass="export-section">
+        <Label text="Export Format:" styleClass="section-label">
+            <font>
+                <Font name="System Bold" size="14"/>
+            </font>
+        </Label>
+
+        <HBox spacing="20">
+            <Button text="Export to Excel (XLSX)" onAction="#exportToExcel" styleClass="export-button"/>
+            <Button text="Export to CSV" onAction="#exportToCSV" styleClass="export-button"/>
+            <Button text="Export to SQL" onAction="#exportToSQL" styleClass="export-button"/>
+        </HBox>
+    </VBox>
+
+    <!-- Progress -->
+    <VBox spacing="10" styleClass="progress-section">
+        <ProgressBar fx:id="exportProgress" progress="0.0" maxWidth="Infinity"/>
+        <Label fx:id="statusLabel" text="Ready to export..." styleClass="status-label"/>
+    </VBox>
+</VBox>

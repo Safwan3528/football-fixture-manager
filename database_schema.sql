@@ -64,7 +64,7 @@ CREATE TABLE fixtures (
     FOREIGN KEY (match_id) REFERENCES matches(id)
 );
 
--- Tambahkan tabel league
+
 CREATE TABLE IF NOT EXISTS leagues (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     name TEXT NOT NULL,
@@ -74,7 +74,7 @@ CREATE TABLE IF NOT EXISTS leagues (
     end_date DATE NOT NULL
 );
 
--- Tambahkan tabel relasi league_teams
+
 CREATE TABLE IF NOT EXISTS league_teams (
     league_id INTEGER,
     team_id INTEGER,
@@ -83,7 +83,7 @@ CREATE TABLE IF NOT EXISTS league_teams (
     FOREIGN KEY (team_id) REFERENCES teams(id)
 );
 
--- Tambahkan tabel relasi league_matches
+
 CREATE TABLE IF NOT EXISTS league_matches (
     league_id INTEGER,
     match_id INTEGER,

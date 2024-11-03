@@ -33,10 +33,10 @@ public class CoachesController {
     private TableColumn<Coach, String> nameColumn;
 
     @FXML
-    private TableColumn<Coach, Integer> experienceYearsColumn;  // Tambah kolom baru
+    private TableColumn<Coach, Integer> experienceYearsColumn;  // Tambah  experiance years
 
     @FXML
-    private TableColumn<Coach, String> nationalityColumn;       // Tambah kolom baru
+    private TableColumn<Coach, String> nationalityColumn;       // Tambah nationality
 
     @FXML
     private TableColumn<Coach, String> teamColumn;

@@ -56,7 +56,7 @@
                     <FontIcon iconLiteral="fas-calendar" iconSize="16"/>
                 </graphic>
             </Button>
-            <!-- Tambah tombol League -->
+            <!-- Tambah toogle League -->
             <Button text="League" onAction="#showLeagueView" maxWidth="Infinity">
                 <graphic>
                     <FontIcon iconLiteral="fas-trophy" iconSize="16"/>

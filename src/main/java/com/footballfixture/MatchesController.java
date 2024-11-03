@@ -1,15 +1,26 @@
 package com.footballfixture;
 
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.sql.Timestamp;
+import java.time.LocalDateTime;
+
 import com.footballfixture.model.Match;
-import com.footballfixture.model.Team;
 import com.footballfixture.model.Stadium;
-import javafx.fxml.FXML;
-import javafx.scene.control.*;
+import com.footballfixture.model.Team;
+
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-
-import java.sql.*;
-import java.time.LocalDateTime;
+import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
+import javafx.scene.control.ComboBox;
+import javafx.scene.control.DatePicker;
+import javafx.scene.control.ListCell;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
 
 public class MatchesController {
 
@@ -92,7 +103,7 @@ public class MatchesController {
     }
 
     private void setupComboBoxes() {
-        // Konfigurasi tampilan untuk home team ComboBox
+        // configuration untuk home team ComboBox
         homeTeamComboBox.setCellFactory(param -> new ListCell<Team>() {
             @Override
             protected void updateItem(Team team, boolean empty) {
@@ -105,7 +116,7 @@ public class MatchesController {
             }
         });
 
-        // Konfigurasi tampilan untuk away team ComboBox
+        // configuration untuk away team ComboBox
         awayTeamComboBox.setCellFactory(param -> new ListCell<Team>() {
             @Override
             protected void updateItem(Team team, boolean empty) {
@@ -118,7 +129,7 @@ public class MatchesController {
             }
         });
 
-        // Konfigurasi tampilan teks yang dipilih untuk home team
+        // configuration teks yang dipilih untuk home team
         homeTeamComboBox.setButtonCell(new ListCell<Team>() {
             @Override
             protected void updateItem(Team team, boolean empty) {
@@ -131,7 +142,7 @@ public class MatchesController {
             }
         });
 
-        // Konfigurasi tampilan teks yang dipilih untuk away team
+        // configuration tampilan teks yang dipilih untuk away team
         awayTeamComboBox.setButtonCell(new ListCell<Team>() {
             @Override
             protected void updateItem(Team team, boolean empty) {
@@ -321,12 +332,12 @@ public class MatchesController {
 
     @FXML
     private void updateMatch() {
-        // Implementasi untuk memperbarui pertandingan
+        // untuk memperbarui match
     }
 
     @FXML
     private void deleteMatch() {
-        // Implementasi untuk menghapus pertandingan
+        // untuk delete match
     }
 
     private void showAlert(String title, String content) {

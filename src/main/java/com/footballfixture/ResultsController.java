@@ -1,13 +1,23 @@
 package com.footballfixture;
 
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+
 import com.footballfixture.model.Match;
 import com.footballfixture.model.MatchResult;
-import javafx.fxml.FXML;
-import javafx.scene.control.*;
+
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-
-import java.sql.*;
+import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
+import javafx.scene.control.ComboBox;
+import javafx.scene.control.ListCell;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
+import javafx.scene.control.TextField;
 
 public class ResultsController {
 
@@ -45,7 +55,7 @@ public class ResultsController {
     private ObservableList<Match> matches = FXCollections.observableArrayList();
 
     private void setupComboBox() {
-        // Konfigurasi tampilan untuk match ComboBox
+        // config tampilan untuk match ComboBox
         matchComboBox.setCellFactory(param -> new ListCell<Match>() {
             @Override
             protected void updateItem(Match match, boolean empty) {
@@ -131,7 +141,7 @@ public class ResultsController {
         loadMatches();
         loadResults();
 
-        // Menambahkan listener untuk pemilihan tabel
+        // Menambahkan listener untuk pemilihan table
         resultsTable.getSelectionModel().selectedItemProperty().addListener((obs, oldSelection, newSelection) -> {
             if (newSelection != null) {
                 Match selectedMatch = matches.stream()

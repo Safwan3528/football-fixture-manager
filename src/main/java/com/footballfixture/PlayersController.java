@@ -123,7 +123,7 @@ public class PlayersController {
     }
 
     private void setupTeamComboBoxListener() {
-        // Konfigurasi tampilan ComboBox untuk menampilkan nama club
+        // config tampilan ComboBox untuk menampilkan nama club
         teamComboBox.setCellFactory(param -> new ListCell<Team>() {
             @Override
             protected void updateItem(Team team, boolean empty) {
@@ -136,7 +136,7 @@ public class PlayersController {
             }
         });
 
-        // Konfigurasi tampilan teks yang dipilih
+        // config tampilan teks yang dipilih
         teamComboBox.setButtonCell(new ListCell<Team>() {
             @Override
             protected void updateItem(Team team, boolean empty) {

@@ -186,7 +186,7 @@ public class DatabaseConnection {
     }
 
     public static void deleteDatabase() {
-        closeAllConnections(); // Tutup semua connection terlebih dahulu
+        closeAllConnections(); // Tutup semua connection dulu
         
         if (useMySql) {
             try (Connection conn = DriverManager.getConnection(MYSQL_URL, USER, PASSWORD);
